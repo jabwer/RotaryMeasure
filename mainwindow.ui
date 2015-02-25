@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>960</width>
+    <height>708</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QVBoxLayout" name="verticalLayout_3">
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <item>
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="tabShape">
+       <enum>QTabWidget::Rounded</enum>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <property name="elideMode">
+       <enum>Qt::ElideNone</enum>
+      </property>
+      <property name="documentMode">
+       <bool>true</bool>
+      </property>
+      <widget class="QWidget" name="tab">
+       <attribute name="title">
+        <string>Data</string>
+       </attribute>
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <property name="spacing">
+         <number>0</number>
+        </property>
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QTableView" name="tableView"/>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_2">
+       <attribute name="title">
+        <string>Graph</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_4">
+        <property name="spacing">
+         <number>0</number>
+        </property>
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="Plot" name="widget" native="true"/>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>960</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <widget class="QMenu" name="menuExport">
+     <property name="title">
+      <string>Export To...</string>
+     </property>
+     <addaction name="actionExportToPdf"/>
+     <addaction name="actionExportToCSV"/>
+    </widget>
+    <addaction name="actionNewConfiguration"/>
+    <addaction name="actionOpenConfiguration"/>
+    <addaction name="actionSaveConfiguration"/>
+    <addaction name="separator"/>
+    <addaction name="menuExport"/>
+    <addaction name="separator"/>
+    <addaction name="actionExit"/>
+   </widget>
+   <widget class="QMenu" name="menuLog">
+    <property name="title">
+     <string>Log</string>
+    </property>
+    <addaction name="actionClearLog"/>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>Help</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuTest">
+    <property name="title">
+     <string>Test</string>
+    </property>
+    <addaction name="actionStartTest"/>
+    <addaction name="actionPauseTest"/>
+    <addaction name="actionStopTest"/>
+    <addaction name="actionMeasure"/>
+   </widget>
+   <widget class="QMenu" name="menuTurntable">
+    <property name="title">
+     <string>Turntable</string>
+    </property>
+    <addaction name="actionStepForward"/>
+    <addaction name="actionStopTurntable"/>
+    <addaction name="actionStepBackward"/>
+    <addaction name="actionReturnToZero"/>
+    <addaction name="actionSetAngle"/>
+   </widget>
+   <widget class="QMenu" name="menuDebug">
+    <property name="title">
+     <string>Debug</string>
+    </property>
+    <addaction name="actionDebugGenerateSampleData"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuTest"/>
+   <addaction name="menuTurntable"/>
+   <addaction name="menuLog"/>
+   <addaction name="menuHelp"/>
+   <addaction name="menuDebug"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar2">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionStartTest"/>
+   <addaction name="actionPauseTest"/>
+   <addaction name="actionStopTest"/>
+   <addaction name="actionMeasure"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionStepBackward"/>
+   <addaction name="actionStopTurntable"/>
+   <addaction name="actionStepForward"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <widget class="QDockWidget" name="dockWidget">
+   <property name="windowTitle">
+    <string>Log</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>8</number>
+   </attribute>
+   <widget class="QWidget" name="dockWidgetContents">
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <property name="spacing">
+      <number>0</number>
+     </property>
+     <property name="leftMargin">
+      <number>0</number>
+     </property>
+     <property name="topMargin">
+      <number>0</number>
+     </property>
+     <property name="rightMargin">
+      <number>0</number>
+     </property>
+     <property name="bottomMargin">
+      <number>0</number>
+     </property>
+     <item>
+      <widget class="QPlainTextEdit" name="plainTextEdit"/>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QDockWidget" name="Settings">
+   <property name="windowTitle">
+    <string>Settings</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>2</number>
+   </attribute>
+   <widget class="QWidget" name="dockWidgetContents_2">
+    <layout class="QVBoxLayout" name="verticalLayout_2">
+     <property name="spacing">
+      <number>0</number>
+     </property>
+     <property name="leftMargin">
+      <number>0</number>
+     </property>
+     <property name="topMargin">
+      <number>0</number>
+     </property>
+     <property name="rightMargin">
+      <number>0</number>
+     </property>
+     <property name="bottomMargin">
+      <number>2</number>
+     </property>
+     <item>
+      <widget class="QComboBox" name="comboBox">
+       <item>
+        <property name="text">
+         <string>Application Settings</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Project Settings</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Analyzer Settings</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Turntable Settings</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item>
+      <widget class="PropertyEditor::PropertyEditor" name="propertyEditor"/>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <action name="actionNewConfiguration">
+   <property name="text">
+    <string>New</string>
+   </property>
+  </action>
+  <action name="actionOpenConfiguration">
+   <property name="text">
+    <string>Open</string>
+   </property>
+  </action>
+  <action name="actionSaveConfiguration">
+   <property name="text">
+    <string>Save</string>
+   </property>
+  </action>
+  <action name="actionExit">
+   <property name="text">
+    <string>Exit</string>
+   </property>
+  </action>
+  <action name="actionClearLog">
+   <property name="text">
+    <string>Clear</string>
+   </property>
+  </action>
+  <action name="actionStartTest">
+   <property name="text">
+    <string>Start</string>
+   </property>
+  </action>
+  <action name="actionPauseTest">
+   <property name="text">
+    <string>Pause</string>
+   </property>
+  </action>
+  <action name="actionStopTest">
+   <property name="text">
+    <string>Stop</string>
+   </property>
+  </action>
+  <action name="actionStepBackward">
+   <property name="text">
+    <string>Step Backward</string>
+   </property>
+  </action>
+  <action name="actionMeasure">
+   <property name="text">
+    <string>Measure</string>
+   </property>
+  </action>
+  <action name="actionStopTurntable">
+   <property name="text">
+    <string>Stop</string>
+   </property>
+  </action>
+  <action name="actionReturnToZero">
+   <property name="text">
+    <string>Return To Zero</string>
+   </property>
+  </action>
+  <action name="actionSetAngle">
+   <property name="text">
+    <string>Set Angle</string>
+   </property>
+  </action>
+  <action name="actionStepForward">
+   <property name="text">
+    <string>Step Forward</string>
+   </property>
+  </action>
+  <action name="actionDebugGenerateSampleData">
+   <property name="text">
+    <string>Generate Sample Data</string>
+   </property>
+  </action>
+  <action name="actionExportToPdf">
+   <property name="text">
+    <string>Pdf</string>
+   </property>
+   <property name="toolTip">
+    <string>Pdf</string>
+   </property>
+  </action>
+  <action name="actionExportToCSV">
+   <property name="text">
+    <string>Csv</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>PropertyEditor::PropertyEditor</class>
+   <extends>QTreeView</extends>
+   <header>propertyeditor.h</header>
+  </customwidget>
+  <customwidget>
+   <class>Plot</class>
+   <extends>QWidget</extends>
+   <header>plot.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
